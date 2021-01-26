@@ -60,5 +60,12 @@ class Snake(Turtle):
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
 
+    def reset(self):
+        for seg in self.segment_list:
+            seg.goto(1000, 1000)
+        self.segment_list.clear()
+        self.create_snake()
+        self.head = self.segment_list[0]
+
 
 
